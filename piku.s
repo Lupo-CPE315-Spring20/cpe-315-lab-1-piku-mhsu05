@@ -11,6 +11,12 @@ main:
     ldr     r0, =message
     bl      printf
 
+    ldr     r0, =message2
+    bl      printf
+
+    ldr     r0, =message3
+    bl      printf
+
     @ Exit from 'main'. This is like 'return 0' in C.
     mov     r0, #0      @ Return 0.
     @ Pop the dummy ip to reverse our alignment fix, and pop the original lr
@@ -21,4 +27,10 @@ main:
     @ Data for the printf call. The GNU assembler's ".asciz" directive
     @ automatically adds a NULL character termination.
 message:
-    .asciz  "Hello, world.\n"
+    .asciz  "Raspberry Pi rocks.\n"
+
+message2:
+    .asciz  "Just like the amazing fruit,\n"
+
+message3:
+    .asciz  "Refrigerated.\n"
